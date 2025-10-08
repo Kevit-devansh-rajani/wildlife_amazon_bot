@@ -1,0 +1,16 @@
+scrape data from website using selenium
+        |
+
+store it in "scrapped_data.txt"
+        |
+
+convert it into LLM friendly format (JSON)
+        |
+
+Use assistant API Retrieval tool for (chunking + embeddings + searching)
+        |
+
+Answer from Assistant
+        |
+        
+Streamlit UI for chatbot
