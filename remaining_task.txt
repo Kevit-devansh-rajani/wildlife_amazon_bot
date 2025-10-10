@@ -1,0 +1,8 @@
+- scrape experts section
+- dump all sections into one file
+- clean the text content
+- feed data into knowledge base 
+- explore about Retrieval Tool / manual embeddings & storing
+- integrate LLM for answer generation
+- integrate litellm (for response) + langfuse (for monitoring LLMs in web)
+- stramlit UI
