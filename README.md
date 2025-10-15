@@ -1,5 +1,8 @@
 # Wildlife Amazon Bot
 
+<img width="1825" height="816" alt="image" src="https://github.com/user-attachments/assets/f68b902f-05e8-4f18-baaf-19ac9e553f47" />
+
+
 This project is a chatbot that can answer questions about the Amazon rainforest. It uses a web scraper to gather information from the World Wildlife Fund website and then uses the OpenAI Assistants API to power the chatbot.
 
 ## Workflow
