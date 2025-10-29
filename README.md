@@ -48,7 +48,7 @@ The project follows this workflow:
 
 2.  **Run the Streamlit chatbot:**
     ```bash
-    streamlit run app.py 
+    streamlit run streamlit_UI.py 
     ```
     This will start the Streamlit application, and you can open it in your browser to start asking questions.
 
