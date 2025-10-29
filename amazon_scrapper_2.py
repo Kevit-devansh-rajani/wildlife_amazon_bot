@@ -151,7 +151,47 @@ try:
         "Publication Details" : publication_data 
     })
 
+    driver.back()
+
 except Exception as e:
     print("Error while extracting Publication section:", e)
+
+# Section - 8: Experts Section
+
+try:
+    expert_data = []
+    wait = WebDriverWait(driver, 10)
+    next_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "ul.nav a.next")))
+
+    collected_names = set()
+    previous_first_expert = None
+    same_count = 0
+
+    while len(collected_names) < 10 and same_count < 2:
+        experts = driver.find_elements(By.CSS_SELECTOR, "ul.items.list-data a.block.contain")
+        if experts:
+            first_expert_name = experts[0].find_element(By.CSS_SELECTOR, "strong.hdr").text.strip()
+            if first_expert_name == previous_first_expert:
+                same_count += 1
+            else:
+                same_count = 0
+            previous_first_expert = first_expert_name
+            for expert in experts:
+                name = expert.find_element(By.CSS_SELECTOR, "strong.hdr").text.strip()
+                if name not in collected_names:
+                    details = expert.find_element(By.CSS_SELECTOR, "em.details.base").text.strip()
+                    expert_data.append({
+                        "Expert Name": name,
+                        "Expert Details": details
+                    })
+                    collected_names.add(name)
+        next_button.click()
+        time.sleep(0.5)
+
+    data.append({
+        "Expert Information": expert_data
+    })
+except Exception as e:
+    print("Error while extracting Experts section:", e)
 
 print(data)
